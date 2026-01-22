@@ -574,7 +574,7 @@
            (gentag meta "charset" "UTF-8")
            (userstyle ,gu)
            (usertheme, gu)
-           (gentag link "rel" "icon" "href" "/favicon.ico")
+           (gentag link "rel" "shortcut icon" "href" "https://linkforest.cn/favicon.ico" "type" "image/x-icon")
            (gentag "meta" "name" "viewport" "value" "width=device-width")
            (tag (script "type" "text/javascript" "src" "/news.js"))
            (tag title (pr (+ this-site* (if ,gt (+ bar* ,gt) "")))))
