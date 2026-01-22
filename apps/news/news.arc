@@ -667,7 +667,7 @@
 ;  `(longpage ,user ,label ,title ,whence ,@body))
 
 (mac minipage (user label . body)
-  `(longpage ,user ,label (+ this-site* bar* ,label) "/" ,@body))
+  `(longpage ,user ,label ,label "/" ,@body))
 
 (def msgpage (user msg (o title))
   (minipage user (or title "Message")
@@ -1502,7 +1502,7 @@
 
 (def submit-page (user (o url) (o title) (o showtext) (o text "") (o msg)
                        (o req)) ; unused
-  (longpage user "Submit" (+ this-site* bar* "Submit") "/"
+  (longpage user "Submit" "Submit" "/"
     (pagemessage msg)
     (urform user req
             (process-story (get-user req)
