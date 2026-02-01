@@ -161,3 +161,11 @@ form {
 .comment-2 { opacity:0.4; filter:alpha(opacity=40);}
 .comment-3 { opacity:0.3; filter:alpha(opacity=30);}
 .comment-4 { opacity:0.2; filter:alpha(opacity=20);}
+
+@media screen and (max-width: 768px) {
+    
+    .layout {
+        width: 95%;
+        min-width: 0;
+    }
+}
