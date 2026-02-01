@@ -620,7 +620,7 @@
                         (rlinkf 'logout (req)
                           (when-umatch/r ,gu req
                             (logout-user ,gu)
-                        ,gw))
+                        ，"news"))
                         (onlink "login"
                           (news-login-page nil
                                 (list (fn (u ip)
