@@ -162,30 +162,39 @@ form {
 .comment-3 { opacity:0.3; filter:alpha(opacity=30);}
 .comment-4 { opacity:0.2; filter:alpha(opacity=20);}
 
-/* --- 移动端适配 --- */
+/* ================= 移动端适配 (放在文件最下方) ================= */
 @media screen and (max-width: 768px) {
-    /* 1. 调整主容器宽度 */
+    
+    /* 1. 让主容器变宽 */
     .layout {
-        width: 96% !important;     /* 手机上占满屏幕 */
-        min-width: 0 !important;   /* 取消最小宽度限制 */
-        margin: 0 auto !important;
+        width: 95% !important;  /* 强制变宽 */
+        min-width: 0 !important; /* 取消最小宽度限制 */
     }
 
-    /* 2. 调整内容内边距 (根据 news.arc 第 483 行的 .page-content) */
+    /* 2. 关键修复：减小手机上的内边距 */
+    /* 原来的 padding-right: 5em 在手机上太大了，会导致字挤在一起 */
     .page-content {
-        padding-left: 10px !important;
-        padding-right: 10px !important; /* 原来的 5em 太大了，手机上要改小 */
-        padding-top: 10px !important;
+        padding-left: 1em; 
+        padding-right: 1em; 
     }
 
-    /* 3. 调整列表缩进 (根据 news.arc 第 724 行的 .items-list) */
-    .items-list, .comments-list {
-        padding-left: 5px !important;
-        margin-left: 0 !important;
+    /* 3. 调整列表和缩进，让手机显示更多内容 */
+    .items-list, .comments-list, .threads-list {
+        padding-left: 0.5em;
+        margin-left: 0.5em;
+    }
+    
+    form {
+        padding-left: 1em; /* 表单也没必要缩进那么多 */
     }
 
-    /* 4. 让列表项更好看 */
-    .items-list li {
-        margin-left: 5px !important;
+    /* 4. 导航栏调整（防止手机上换行太难看） */
+    #navright {
+        float: none;       /* 取消浮动 */
+        display: block;    /* 变为块级元素 */
+        margin-right: 0;
+        text-align: left;  /* 或者 center */
+        padding-left: 1em;
+        margin-bottom: 10px;
     }
 }
