@@ -162,10 +162,30 @@ form {
 .comment-3 { opacity:0.3; filter:alpha(opacity=30);}
 .comment-4 { opacity:0.2; filter:alpha(opacity=20);}
 
+/* --- 移动端适配 --- */
 @media screen and (max-width: 768px) {
-    
+    /* 1. 调整主容器宽度 */
     .layout {
-        width: 95%;
-        min-width: 0;
+        width: 96% !important;     /* 手机上占满屏幕 */
+        min-width: 0 !important;   /* 取消最小宽度限制 */
+        margin: 0 auto !important;
+    }
+
+    /* 2. 调整内容内边距 (根据 news.arc 第 483 行的 .page-content) */
+    .page-content {
+        padding-left: 10px !important;
+        padding-right: 10px !important; /* 原来的 5em 太大了，手机上要改小 */
+        padding-top: 10px !important;
+    }
+
+    /* 3. 调整列表缩进 (根据 news.arc 第 724 行的 .items-list) */
+    .items-list, .comments-list {
+        padding-left: 5px !important;
+        margin-left: 0 !important;
+    }
+
+    /* 4. 让列表项更好看 */
+    .items-list li {
+        margin-left: 5px !important;
     }
 }
